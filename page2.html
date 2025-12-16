@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RN4our Trophy 2025 Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Font Awesome CDN for official icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+      font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 420px;
+      margin: 44px auto;
+      background: #f6f8fa;
+      border-radius: 22px;
+      box-shadow: 0 6px 32px rgba(46,82,152,0.13);
+      overflow: hidden;
+    }
+    .section {
+      padding: 26px 22px 0 22px;
+    }
+    .section-title {
+      background: linear-gradient(90deg,#0d6efd 50%, #5e60ce 100%);
+      color: #fff;
+      font-size: 1.16em;
+      padding: 11px 22px;
+      border-radius: 18px 18px 0 0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px #0d6efd22;
+    }
+    .section-title svg {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      margin-top: 13px;
+      color: #23406b;
+      letter-spacing: 0.1px;
+    }
+    .icon-input-group {
+      display: flex;
+      align-items: center;
+      background: #eaf1fb;
+      border-radius: 12px;
+      border: 1px solid #bfcbe1;
+      margin-bottom: 22px; 
+      padding-left: 4px;
+      transition: border .2s;
+    }
+    .icon-input-group:focus-within {
+      border: 1.5px solid #3f51b5;
+      background: #f8fbff;
+    }
+    .icon-input-group i {
+      color: #3f51b5;
+      font-size: 1em;
+      vertical-align: middle;
+      margin-right: 9px;
+      min-width: 22px;
+      text-align: center;
+      display: inline-block;
+    }
+    .icon-input-group input[type="text"], 
+    .icon-input-group input[type="file"], 
+    .icon-input-group select {
+      border: none;
+      background: transparent;
+      font-size: 0.94em;
+      font-family: inherit;
+      color: #1e2a4c;
+      padding: 10px 0;
+      width: 100%;
+      outline: none;
+      border-radius: 12px;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+    .icon-input-group input[type="file"] {
+      background: #fff;
+      color: #1e2a4c;
+    }
+    .required {
+      color: #e63946;
+    }
+    .info {
+      color: #3d4862;
+      font-size: 0.99em;
+      margin-bottom: 8px;
+    }
+    .bold {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      margin: 26px 0 12px 0;
+    }
+    .btn {
+      flex: 1;
+      padding: 13px 0;
+      border-radius: 11px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 2px 8px #2a529822;
+      transition: background .2s, transform .2s;
+      letter-spacing: 0.3px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+    .btn-back {
+      background: linear-gradient(90deg,#5e60ce 70%, #bfcbe1 100%);
+      color: #fff;
+    }
+    .btn-back:hover {
+      background: linear-gradient(90deg,#3f51b5 70%, #bfcbe1 100%);
+      transform: translateY(-2px);
+    }
+    .btn-submit {
+      background: linear-gradient(90deg,#0d6efd 60%, #38b6ff 100%);
+      color: #fff;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(90deg,#2563eb 60%, #38b6ff 100%);
+      transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center;
+      padding: 26px 0 15px 0;
+      color: #f6f8fa;
+      background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+      font-size: 1.1em;
+      font-family: 'Montserrat';
+      letter-spacing: 0.3px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 7px 0 14px 0;
+    }
+    .social-icons a {
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #3f51b522;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      transition: box-shadow .2s;
+    }
+    .social-icons a:hover {
+      box-shadow: 0 4px 12px #0d6efd33;
+    }
+    .social-icons svg {
+      width: 26px;
+      height: 26px;
+      margin: 0;
+    }
+    .design-credit {
+      font-size: 1em;
+      color: #f6f8fa;
+      margin-top: 8px;
+      letter-spacing: 0.2px;
+    }
+    .qr-section {
+      background: #f3f6fd;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      margin-bottom: 18px;
+      box-shadow: 0 1px 8px #3f51b522;
+      border: 1px solid #bfcbe1;
+    }
+    .upi-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1.08em;
+      color: #0d6efd;
+      letter-spacing: 0.1px;
+    }
+    .qr-img {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 12px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1.5px solid #3f51b5;
+      box-shadow: 0 1px 10px #0d6efd33;
+      background: #fff;
+    }
+    .upi-details {
+      font-size: 1em;
+      margin-bottom: 4px;
+      color: #23406b;
+      letter-spacing: 0.1px;
+    }
+    .qr-note {
+      color: #3d4862;
+      font-size: 0.98em;
+      margin-bottom: 6px;
+    }
+    .file-error {
+      color: #e63946;
+      font-size: 0.93em;
+      margin-top: -8px;
+      margin-bottom: 8px;
+      display: none;
+    }
+    .field-error {
+      color: #e63946;
+      font-size: 0.93em;
+      margin-top: -8px;
+      margin-bottom: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="registrationForm">
+    <div class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-user" style="color:#fff"></i>
+        Personal Information
+      </div>
+      <label for="fname">First Name <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+      </div>
+
+      <label for="lname">Last Name <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required>
+      </div>
+
+      <label for="cricheroz"> Contact Number (Cricheroes) <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-brands fa-whatsapp"></i>
+        <input type="text" id="cricheroz" name="cricheroz" placeholder="Enter Cricheroes Number" required>
+      </div>
+      <small id="cricheroz-error" class="field-error">Minimum 10 digits required.</small>
+
+      <label for="village">Village <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-house"></i>
+        <input type="text" id="village" name="village" placeholder="Enter your Village" required>
+      </div>
+
+      <label for="taluka">City <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-city"></i>
+        <input type="text" id="taluka" name="taluka" placeholder="Enter your City" required>
+      </div>
+
+      <label for="profile">Profile Photo <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-camera"></i>
+        <input type="file" id="profile" name="profile" required>
+      </div>
+      <small id="profile-error" class="file-error">File size must not exceed 1 MB.</small>
+      <div class="info">Upload a clear face photo For Auction</div>
+
+      <label for="aadhaar">Aadhar Card <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-id-card"></i>
+        <input type="file" id="aadhaar" name="aadhaar" required>
+      </div>
+      <small id="aadhaar-error" class="file-error">File size must not exceed 1 MB.</small>
+      <div class="info">Upload a clear image of your Aadhar card</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-user-tag" style="color:#fff"></i>
+        Player Role
+      </div>
+      <label for="role">Role <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-user-astronaut"></i>
+        <select id="role" name="role" required>
+          <option value="">Select Role</option>
+          <option value="Batsman">Batsman</option>
+          <option value="Bowler">Bowler</option>
+          <option value="Allrounder">Allrounder</option>
+          <option value="Wicketkeeper">Wicket Keeper</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-shirt" style="color:#fff"></i>
+        Clothing Information
+      </div>
+      <label for="size">T-shirt Size <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-shirt"></i>
+        <select id="size" name="size" required>
+          <option value="">Select Size</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+          <option value="XXXL">XXXL</option>
+        </select>
+      </div>
+
+      <label for="tshirtno">T-shirt Number <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-hashtag"></i>
+        <input type="text" id="tshirtno" name="tshirtno" placeholder="Enter T-Shirt Number" required>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-qrcode" style="color:#fff"></i>
+        QR to Make Payment
+      </div>
+      <div class="info bold">Please scan the QR code to make a payment of <span class="bold">Rs 500.00</span>.</div>
+      <div class="info">After completing the payment, kindly upload a screenshot of the transaction as proof.</div>
+      <div class="qr-section">
+        <div class="upi-title">Nirav Patel</div>
+        <img class="qr-img" src="https://i.postimg.cc/yN4pvR9x/53fd1c96-e2a4-47a0-a7e7-d3b5e9cd9bb1.jpg" alt="QR Code">
+        <div class="upi-details">UPI ID:nirav.patel.00200-1@okaxis<br>Amount: ₹500.00</div>
+        <div class="qr-note">Scan to pay with any UPI app</div>
+      </div>
+      <label for="paymentss">Please Upload Payment Screenshot Below <span class="required">*</span></label>
+      <div class="icon-input-group">
+        <i class="fa-solid fa-receipt"></i>
+        <input type="file" id="paymentss" name="paymentss" required>
+      </div>
+      <small id="paymentss-error" class="file-error">File size must not exceed 1 MB.</small>
+      <div class="info">
+        <i> Please upload the payment screenshot. Ensure the receipt clearly shows the <span class="bold">500.00 amount paid</span>, <span class="bold">date of payment</span>, and <span class="bold">transaction ID</span> for verification.</i>
+      </div>
+      <div class="btn-row">
+        <a href="page1.html" class="btn btn-back">&#8592; Back</a>
+        <button type="submit" class="btn btn-submit">&#10004; Submit Registration</button>
+      </div>
+    </div>
+    </form>
+    <div class="footer">
+      <div>Follow us on:</div>
+      <div class="social-icons">
+       <a href="https://www.instagram.com/rn4our_cricket?igsh=eThicnJvNXhzbGlv&utm_source=qr
+" target="_blank">
+         <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+          alt="Instagram" 
+          width="25" 
+          height="25" 
+          style="border-radius:6px; cursor:pointer;"
+         />
+       </a>
+       <a href="https://wa.me/919067670440" target="_blank">
+         <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+          alt="WhatsApp" 
+          width="25" 
+          height="25" 
+          style="cursor:pointer;"
+         />
+       </a>
+      </div>
+      <div class="design-credit">Designed by <b> RN4OUR CRICKET</b></div>
+    </div>
+  </div>
+  <script>
+const webAppUrl = "https://script.google.com/macros/s/AKfycbw6swVcNDHFq-psXAwhuZzi1YcDROnZ5YWPwRCkseI85hGLc_7_aTjWw8gXXgWuiO6oBw/exec";
+
+function generateUniqueID() {
+  return 'RN2025' + Date.now().toString().slice(-6) + Math.floor(100 + Math.random() * 900);
+}
+
+// File size validation with error below input and clear file if invalid
+function checkFileInputSize(inputId, errorId) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(errorId);
+  const MAX_FILE_SIZE = 1024 * 1024; // 1 MB
+
+  input.addEventListener('change', function() {
+    if (input.files[0] && input.files[0].size > MAX_FILE_SIZE) {
+      error.style.display = 'inline';
+      input.value = '';
+    } else {
+      error.style.display = 'none';
+    }
+  });
+}
+checkFileInputSize('profile', 'profile-error');
+checkFileInputSize('aadhaar', 'aadhaar-error');
+checkFileInputSize('paymentss', 'paymentss-error');
+
+// Cricheroz minimum 10 digit validation live
+document.getElementById('cricheroz').addEventListener('input', function() {
+  const val = this.value.trim();
+  if (val.length < 10) {
+    document.getElementById('cricheroz-error').style.display = 'inline';
+  } else {
+    document.getElementById('cricheroz-error').style.display = 'none';
+  }
+});
+
+document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // Button disable (prevent multiple clicks)
+  const submitBtn = document.querySelector('.btn-submit');
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.6";
+
+  // Cricheroz validation before anything
+  const cricherozInput = document.getElementById('cricheroz');
+  const cricherozVal = cricherozInput.value.trim();
+  if (cricherozVal.length < 10) {
+    document.getElementById('cricheroz-error').style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    return;
+  } else {
+    document.getElementById('cricheroz-error').style.display = 'none';
+  }
+
+  // Show SweetAlert2 loading popup
+  Swal.fire({
+    title: 'Processing...',
+    html: 'Your registration is being processed.<br><br><img src="https://i.gifer.com/ZZ5H.gif" width="42" height="42" style="margin-top:12px;">',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    showConfirmButton: false,
+    background: 'linear-gradient(120deg, #f6f8fa 0%, #eaf1fb 100%)',
+    color: '#23406b'
+  });
+
+  async function toBase64(file) {
+    if (!file) return '';
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Sare field values le lo
+  const fname = document.getElementById('fname').value;
+  const lname = document.getElementById('lname').value;
+  // cricheroz already le liya upar
+  const village = document.getElementById('village').value;
+  const taluka = document.getElementById('taluka').value;
+  const role = document.getElementById('role').value;
+  const size = document.getElementById('size').value;
+  const tshirtno = document.getElementById('tshirtno').value;
+
+  // Files ko base64 me convert karo
+  const profileFile = document.getElementById('profile').files[0];
+  const aadhaarFile = document.getElementById('aadhaar').files[0];
+  const paymentFile = document.getElementById('paymentss').files[0];
+
+  // 1 MB size validation on submit (for double safety)
+  const MAX_FILE_SIZE = 1024 * 1024; // 1 MB
+  if (profileFile && profileFile.size > MAX_FILE_SIZE) {
+    Swal.close();
+    document.getElementById('profile-error').style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    return;
+  }
+  if (aadhaarFile && aadhaarFile.size > MAX_FILE_SIZE) {
+    Swal.close();
+    document.getElementById('aadhaar-error').style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    return;
+  }
+  if (paymentFile && paymentFile.size > MAX_FILE_SIZE) {
+    Swal.close();
+    document.getElementById('paymentss-error').style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    return;
+  }
+
+  const profileBase64 = await toBase64(profileFile);
+  const aadhaarBase64 = await toBase64(aadhaarFile);
+  const paymentBase64 = await toBase64(paymentFile);
+
+  // Unique ID banao
+  const uniqueID = generateUniqueID();
+
+  // Data object banao
+  const payload = new URLSearchParams();
+  payload.append('uniqueID', uniqueID);
+  payload.append('fname', fname);
+  payload.append('lname', lname);
+  payload.append('cricheroz', cricherozVal);
+  payload.append('village', village);
+  payload.append('taluka', taluka);
+  payload.append('role', role);
+  payload.append('size', size);
+  payload.append('tshirtno', tshirtno);
+  payload.append('profile', profileBase64);
+  payload.append('aadhaar', aadhaarBase64);
+  payload.append('paymentss', paymentBase64);
+
+  fetch(webAppUrl, {
+    method: 'POST',
+    body: payload,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
+  .then(res => res.text())
+  .then(msg => {
+    // Close loading & show success
+    Swal.close();
+    Swal.fire({
+      title: 'Registration Received!',
+      html: 'Thank you for registering for RN4our Trophy 2025.<br><br><b>Your Registration ID:</b> <span style="color:#0d6efd; font-size:1.3em;">' + uniqueID + '</span><br><br>Please save this ID for future reference.',
+      icon: 'success',
+      confirmButtonColor: '#1e3c72',
+      background: 'linear-gradient(120deg, #f6f8fa 0%, #eaf1fb 100%)',
+      color: '#23406b',
+      iconColor: '#0d6efd'
+    });
+    document.getElementById('registrationForm').reset();
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    document.getElementById('profile-error').style.display = 'none';
+    document.getElementById('aadhaar-error').style.display = 'none';
+    document.getElementById('paymentss-error').style.display = 'none';
+    document.getElementById('cricheroz-error').style.display = 'none';
+  })
+  .catch(err => {
+    Swal.close();
+    Swal.fire({
+      title: 'Error!',
+      text: 'Something went wrong. Please try again.\n' + err,
+      icon: 'error',
+      confirmButtonColor: '#e63946',
+      background: 'linear-gradient(120deg, #f6f8fa 0%, #eaf1fb 100%)',
+      color: '#23406b',
+      iconColor: '#e63946'
+    });
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+  });
+});
+</script>
+</body>
+</html>
